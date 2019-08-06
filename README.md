@@ -38,8 +38,8 @@ ps: 需要設定 locale 語系
 
 ## 如何測試
 
-先把讓 cron 每分鐘執行，然後使用 `while true; do ps aux | grep ptt.sh; sleep 1; done` 監看。
+1. 先讓 cron 每分鐘執行 (五個 * )，然後使用 `while true; do ps aux | grep ptt.sh; sleep 1; done` 監看行程。
 
-使用 PCMan 之類的終端軟體登入 ptt，接著監視當 ptt.sh 被 cron 喚醒的時候，已經登入的帳戶是否有被踢掉。
+2. 使用 PCMan 之類的終端軟體登入 ptt，接著觀察當 ptt.sh 被 cron 喚醒的時候，已經登入的帳戶是否有被踢掉 (code 裡面選擇踢掉重複的使用者)。
 
-如果有的話，表示自動登入程序正常。可以將 cron 觸發時間改成凌晨。
+3. 如果有的話，表示自動登入程序正常。可以將 cron 觸發時間改成凌晨你在睡覺的時間 XD
