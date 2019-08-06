@@ -1,6 +1,14 @@
 # bbs-auto-login
 
-你需要改這兩個變數
+## 系統需求
+
+你需要安裝 expect 套件
+
+	$ sudo apt-get install expect
+
+## script 設定
+
+你需要改這兩個變數，輸入你自己的 ptt 登入帳密。
 
     set bbsID "korea.fish"
     set bbsPW "show-me-the-money"
@@ -21,6 +29,17 @@ Ref: https://crontab.guru
 
 ### Example: (edit by "crontab -e" command)
 
-		# do auto-login at 3:00AM
+	# do auto-login at 3:00AM
 
-		0 3 * * * /path/to/ptt.sh
+	0 3 * * * LC_ALL="zh_TW.UTF-8" LANGUAGE="zh_TW.UTF-8" LANG="zh_TW.UTF-8" /path/to/ptt.sh
+
+ps: 需要設定 locale 語系
+
+
+## 如何測試
+
+先把讓 cron 每分鐘執行，然後使用 `while true; do ps aux | grep ptt.sh; sleep 1; done` 監看。
+
+使用 PCMan 之類的終端軟體登入 ptt，接著監視當 ptt.sh 被 cron 喚醒的時候，已經登入的帳戶是否有被踢掉。
+
+如果有的話，表示自動登入程序正常。可以將 cron 觸發時間改成凌晨。
