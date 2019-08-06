@@ -17,14 +17,12 @@
 #
 #    # do auto-login at 3:00AM
 #
-#    0 3 * * * /path/to/ptt.sh
-
-exec sh -c { export LANG="zh_TW.UTF-8" }
+#    0 3 * * * LC_ALL="zh_TW.UTF-8" LANGUAGE="zh_TW.UTF-8" LANG="zh_TW.UTF-8" /path/to/ptt.sh
 
 set bbsID		"korea.fish"
 set bbsPW		"show-me-the-money"
 
-set delayLong	"60"
+set delayLong	"8"
 set delayShort	"2"
 
 spawn ssh -oBatchMode=no -oStrictHostKeyChecking=no bbsu@ptt.cc
