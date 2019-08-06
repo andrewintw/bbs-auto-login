@@ -19,13 +19,13 @@
 #
 #    0 3 * * * /path/to/ptt.sh
 
+exec sh -c { export LANG="zh_TW.UTF-8" }
+
 set bbsID		"korea.fish"
 set bbsPW		"show-me-the-money"
 
 set delayLong	"60"
 set delayShort	"2"
-
-exec sh -c { export LANG="zh_TW.UTF-8" }
 
 spawn ssh -oBatchMode=no -oStrictHostKeyChecking=no bbsu@ptt.cc
 
