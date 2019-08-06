@@ -15,9 +15,9 @@
 #
 # Example: (edit by "crontab -e" command)
 #
-#    # do auto-login at 3:00AM
+#    # do auto-login at 3:15AM, 3:30AM, 3:45AM
 #
-#    0 3 * * * LC_ALL="zh_TW.UTF-8" LANGUAGE="zh_TW.UTF-8" LANG="zh_TW.UTF-8" /path/to/ptt.sh
+#    15,30,45 3 * * * LC_ALL="zh_TW.UTF-8" LANGUAGE="zh_TW.UTF-8" LANG="zh_TW.UTF-8" /path/to/ptt.sh
 
 set bbsID		"korea.fish"
 set bbsPW		"show-me-the-money"
